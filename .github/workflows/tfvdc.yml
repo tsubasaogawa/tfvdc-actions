@@ -13,4 +13,4 @@ jobs:
           curl -L --silent https://github.com/tsubasaogawa/terraform-variable-description-coverage/releases/latest/download/tfvdc_linux_x86_64.tar.gz | tar zx -O tfvdc > ~/tfvdc
           chmod 755 ~/tfvdc
       - name: Run
-        run: ~/tfvdc > ./tfvdc.out
+        run: ~/tfvdc 2>&1 1>/dev/null | tee ./tfvdc.out
