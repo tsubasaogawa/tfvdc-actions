@@ -12,5 +12,12 @@ jobs:
         run: |
           curl -L --silent https://github.com/tsubasaogawa/terraform-variable-description-coverage/releases/latest/download/tfvdc_linux_x86_64.tar.gz | tar zx -O tfvdc > ~/tfvdc
           chmod 755 ~/tfvdc
+      - uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
       - name: Run
-        run: ~/tfvdc 2>&1 1>/dev/null | tee ./tfvdc.out
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ~/tfvdc 2>&1 1>/dev/null | tee ./tfvdc.out
+          cat ./tfvdc.out | reviewdog -reporter=github-pr-review -f=golint
