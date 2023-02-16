@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Download tfvdc
         run: |
-          curl -L --silent https://github.com/tsubasaogawa/terraform-variable-description-coverage/releases/latest/download/tfvdc_linux_x86_64.tar.gz | tar zx -O tfvdc > /usr/bin/tfvdc
-          chmod 755 /usr/bin/tfvdc
+          curl -L --silent https://github.com/tsubasaogawa/terraform-variable-description-coverage/releases/latest/download/tfvdc_linux_x86_64.tar.gz | tar zx -O tfvdc > ~/tfvdc
+          chmod 755 ~/tfvdc
       - name: Run
-        run: /usr/bin/tfvdc > ./tfvdc.out
+        run: ~/tfvdc > ./tfvdc.out
