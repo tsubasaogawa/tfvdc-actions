@@ -1,5 +1,6 @@
 variable "foo" {
-  type = number
+  default = "a variable having no description"
+  type    = number
 }
 
 variable "bar" {
