@@ -16,7 +16,7 @@ jobs:
       - uses: reviewdog/action-setup@v1
         with:
           reviewdog_version: latest
-      - uses: tsubasaohawa/tfvdc-actions@v1
+      - uses: tsubasaogawa/tfvdc-actions@v1
         with:
           input_path: ${{ github.workspace }}/${{ env.checkout_dirname }}
           output_path: ${{ github.workspace }}/${{ env.output_filename }}
