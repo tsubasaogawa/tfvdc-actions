@@ -1,6 +1,5 @@
-variable "foo1" {
+variable "foo" {
   type = number
-  // bar
 }
 
 variable "bar" {
