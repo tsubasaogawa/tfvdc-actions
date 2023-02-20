@@ -1,5 +1,7 @@
 # tfvdc-actions
 
+![Sample](https://user-images.githubusercontent.com/7788821/220005307-7edffee7-5d0f-4418-a24b-d1cd819fe276.png)
+
 A simple gh-actions to make sure that the variable contains a description
 
 ## Features
